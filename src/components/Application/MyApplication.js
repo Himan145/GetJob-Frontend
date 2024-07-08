@@ -12,13 +12,13 @@ export const MyApplication=()=>{
     useEffect(()=>{
         try{
             if(user && user.role==="Employeer"){
-                axios.get("http://localhost:5000/api/v1/application/employeer/getall",{withCredentials:true})
+                axios.get("https://get-job-api.onrender.com/api/v1/application/employeer/getall",{withCredentials:true})
                 .then((res)=>{
                     setApplications(res.data.applications);
                 })
             }
             else{
-                axios.get("http://localhost:5000/api/v1/application/jobseeker/getall",{withCredentials:true})
+                axios.get("https://get-job-api.onrender.com/api/v1/application/jobseeker/getall",{withCredentials:true})
                 .then((res)=>{
                     setApplications(res.data.applications);
                 })
