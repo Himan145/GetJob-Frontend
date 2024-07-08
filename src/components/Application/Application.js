@@ -18,7 +18,7 @@ export const Application=()=>{
     const handleApplication=async(e)=>{
         e.preventDefault();
         try{
-            const {data}=await axios.post("http://localhost:5000/api/v1/application/post",{name,email,phone,address,resume_link,jobId:id},{
+            const {data}=await axios.post("https://get-job-api.onrender.com/api/v1/application/post",{name,email,phone,address,resume_link,jobId:id},{
                 withCredentials:true,
                 headers:{"Content-Type":"application/json"}
             });
