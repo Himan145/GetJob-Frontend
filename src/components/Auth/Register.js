@@ -19,7 +19,11 @@ export const Register=()=>{
     const handleRegister=async(e)=>{
         e.preventDefault();
         try{
-            const {data}=await axios.post("https://get-job-backend-plum.vercel.app/api/v1/user/register",{name,email,password,phone,role});
+            const {data}=await axios.post("https://get-job-backend-plum.vercel.app/api/v1/user/register",{name,email,password,phone,role},{
+                headers:{
+                   "Content-Type":"application/json"
+                }
+            });
             toast.success(data.message);
             setName("");
             setEmail("");
