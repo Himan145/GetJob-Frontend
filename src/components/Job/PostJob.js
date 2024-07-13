@@ -33,7 +33,7 @@ export const PostJob=()=>{
             setSalaryTo("");
             setFixedSalary("");
         }
-        await axios.post("https://get-job-api.onrender.com/api/v1/job/post",fixedSalary.length>=4?{
+        await axios.post("https://get-job-backend-plum.vercel.app/api/v1/job/post",fixedSalary.length>=4?{
             title,category,description,country,city,location,fixedSalary
         }:{
             title,category,description,country,city,location,salaryFrom,salaryTo
