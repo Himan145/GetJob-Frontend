@@ -16,7 +16,7 @@ export const Login=()=>{
     const handleLogin=async(e)=>{
         e.preventDefault();
         try{
-            const {data}=await axios.post("https://get-job-api.onrender.com/api/v1/user/login",{email,password,role},{
+            const {data}=await axios.post("https://get-job-backend-plum.vercel.app/api/v1/user/login",{email,password,role},{
                 headers: {
                   "Content-Type": "application/json",
                 },
