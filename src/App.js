@@ -23,7 +23,7 @@ function App() {
   useEffect(()=>{
     const fetchUser=async()=>{
       try{
-        const response=await axios.get("https://get-job-api.onrender.com/api/v1/user/getuser",{withCredentials:true});
+        const response=await axios.get("https://get-job-backend-plum.vercel.app/api/v1/user/getuser",{withCredentials:true});
         setUser(response.data.user);
         setIsAuthorized(true);
       }
