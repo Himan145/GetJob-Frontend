@@ -11,7 +11,7 @@ export const JobDetails=()=>{
     const {isAuthorized,user}=useContext(Context);
 
     useEffect(()=>{
-        axios.get(`https://get-job-api.onrender.com/api/v1/job/${id}`,{withCredentials:true})
+        axios.get(`https://get-job-backend-plum.vercel.app/api/v1/job/${id}`,{withCredentials:true})
         .then((res)=>{
             setJob(res.data.job);
         })
