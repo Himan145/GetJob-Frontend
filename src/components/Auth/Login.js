@@ -17,7 +17,6 @@ export const Login=()=>{
         e.preventDefault();
         try{
             const {data}=await axios.post("https://get-job-backend-plum.vercel.app/api/v1/user/login",{email,password,role});
-            console.log(data);
             toast.success(data.message);
             setEmail("");
             setPassword("");
