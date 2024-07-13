@@ -12,13 +12,13 @@ export const MyApplication=()=>{
     useEffect(()=>{
         try{
             if(user && user.role==="Employeer"){
-                axios.get("https://get-job-api.onrender.com/api/v1/application/employeer/getall",{withCredentials:true})
+                axios.get("https://get-job-backend-plum.vercel.app/api/v1/application/employeer/getall",{withCredentials:true})
                 .then((res)=>{
                     setApplications(res.data.applications);
                 })
             }
             else{
-                axios.get("https://get-job-api.onrender.com/api/v1/application/jobseeker/getall",{withCredentials:true})
+                axios.get("https://get-job-backend-plum.vercel.app/api/v1/application/jobseeker/getall",{withCredentials:true})
                 .then((res)=>{
                     setApplications(res.data.applications);
                 })
