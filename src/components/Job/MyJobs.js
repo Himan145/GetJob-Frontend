@@ -16,7 +16,7 @@ export const MyJobs=()=>{
     useEffect(()=>{
         const fetchJobs=async()=>{
             try{
-                const {data}=await axios.get("https://get-job-api.onrender.com/api/v1/job/getmyjobs",{withCredentials:true});
+                const {data}=await axios.get("https://get-job-backend-plum.vercel.app/api/v1/job/getmyjobs",{withCredentials:true});
                 setMyJobs(data.myjobs);
             }
             catch(error){
@@ -40,7 +40,7 @@ export const MyJobs=()=>{
 
     const handleUpdateJob=async(jobId)=>{
         const updatedJob=myJobs.find((job)=>job._id===jobId);
-        await axios.put(`https://get-job-api.onrender.com/api/v1/job/update/${jobId}`,updatedJob,{withCredentials:true})
+        await axios.put(`https://get-job-backend-plum.vercel.app/api/v1/job/update/${jobId}`,updatedJob,{withCredentials:true})
         .then((res)=>{
             toast.success(res.data.message);
             setEditingMode(null);
@@ -51,7 +51,7 @@ export const MyJobs=()=>{
     }
 
     const handleDeleteJob=async(jobId)=>{
-        await axios.delete(`https://get-job-api.onrender.com/api/v1/job/delete/${jobId}`,{withCredentials:true})
+        await axios.delete(`https://get-job-backend-plum.vercel.app/api/v1/job/delete/${jobId}`,{withCredentials:true})
         .then((res)=>{
             toast.success(res.data.message);
             setMyJobs(prevJobs=>prevJobs.filter(job=>job._id !==jobId));
