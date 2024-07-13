@@ -16,7 +16,11 @@ export const Login=()=>{
     const handleLogin=async(e)=>{
         e.preventDefault();
         try{
-            const {data}=await axios.post("https://get-job-backend-plum.vercel.app/api/v1/user/login",{email,password,role},{withCredentials:true});
+            const {data}=await axios.post("https://get-job-backend-plum.vercel.app/api/v1/user/login",{email,password,role},{
+                headers:{
+                   "Content-Type":"application/json"
+                }
+            });
             toast.success(data.message);
             setEmail("");
             setPassword("");
