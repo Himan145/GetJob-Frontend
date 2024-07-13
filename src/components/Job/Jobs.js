@@ -10,7 +10,7 @@ export const Jobs=()=>{
 
     useEffect(()=>{
         try{
-            axios.get("https://get-job-api.onrender.com/api/v1/job/getall",{withCredentials:true})
+            axios.get("https://get-job-backend-plum.vercel.app/api/v1/job/getall",{withCredentials:true})
             .then((res)=>{
                 setJobs(res.data);
             })
