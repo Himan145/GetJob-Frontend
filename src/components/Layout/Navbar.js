@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import {GiHamburgerMenu} from 'react-icons/gi';
+import NavImg from '../../../public/nav_image.png';
 
 export const Navbar=()=>{
     const [show,setShow]=useState(false);
@@ -27,7 +28,7 @@ export const Navbar=()=>{
           <nav className={isAuthorized?"navbarShow":"navbarHide"}>
             <div className='container'>
                 <div className='logo'>
-                    <img src="/nav_image.png" alt="logo"/>
+                    <img src={NavImg} alt="logo"/>
                 </div>
                 <ul className={!show?"menu":"show-menu menu"}>
                     <li>
